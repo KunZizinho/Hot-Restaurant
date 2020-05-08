@@ -29,7 +29,7 @@
             <span class="fa fa-list-alt"></span> View Tables</button>
         </a>
         <a href="/">
-          <button class="btn btn-lg btn-default">
+          <button class="btn btn-lg btn-default" id="home">
             <span class="fa fa-home"></span>
           </button>
         </a>
@@ -88,14 +88,19 @@
   // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
   // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
   // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
-
+  $("#home").on("click", function(){
+    var returnHome = $("#homepage").vol().trim();
+  })
   $(".submit").on("click", function(event) {
     event.preventDefault();
 
     // Here we grab the form elements
     var newReservation = {
       // YOUR CODE HERE - TO ADD PROPERTIES FROM FORM ELEMENTS
-      
+      name: $("#reserve-name").vol().trim(),
+      number: $("#reserve-phone").vol().trim(),
+      email: $("#reserve-email").vol().trim(),
+      id: $("#reserve-unique-id").vol().trim()
     };
 
     console.log(newReservation);
@@ -112,7 +117,7 @@
 
         // Check the status and alert the user
         // YOUR CODE HERE
-
+        
         // Clear the form when submitting
         // YOUR CODE HERE
 

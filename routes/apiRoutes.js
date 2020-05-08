@@ -19,16 +19,13 @@ module.exports = function(app) {
   // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
   // ---------------------------------------------------------------------------
   // YOUR CODE HERE TO REPLACE THE PLACEHOLDERS
+$()
 
   // YOUR CODE TO MAP AND SEND TABLE DATA IN JSON
-  app.get(YOUR-URL-TABLE-DATA, function () {
 
-  });
 
   // YOUR CODE TO MAP AND SEND WAITING LIST DATA IN JSON
-  app.get(YOUR-URL-WAITING-LIST-DATA, function () {
-    
-  });
+ 
 
   // API POST Requests
   // Below code handles when a user submits a form and thus submits data to the server.
@@ -44,7 +41,15 @@ module.exports = function(app) {
     // req.body is available since we're using the body parsing middleware
     // 
     // YOUR CODE HERE
-
+    switch (req) {
+      case "":
+        return 
+        
+        break;
+    
+      default:
+        break;
+    }
 
   });
 

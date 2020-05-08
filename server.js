@@ -17,16 +17,25 @@ var PORT = process.env.PORT || 8080;
 
 // Sets up the Express app to handle data parsing
 // YOUR CODE HERE
-
-
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+app.use(express.static("./public"))
 // ================================================================================
 // ROUTER
 // The below points our server to a series of "route" files.
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 // ================================================================================
 // YOUR CODE HERE
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, './public/home.html'));
+});
 
-
+app.get("/api/reserve.html", (req, res) => {
+  res.sendFile(path.join(__dirname, './routes/apiRoutes.js'));
+});
+app.get("/api/tables.html", (req, res) => {
+  res.sendFile(path.join(__dirname, './routes/apiRoutes.js'));
+});
 // =============================================================================
 // LISTENER
 // The below code effectively "starts" our server

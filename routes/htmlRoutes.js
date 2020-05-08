@@ -17,12 +17,12 @@ module.exports = function(app) {
 
   // YOUR COE TO MAP AND SEND HTML FILE FOR TABLE
   app.get(YOUR-URL-TABLE-HTML, function () {
-    
+    res.sendFile(path.join(__dirname, "../public/tables.html"));
   } );
 
   // YOUR COE TO MAP AND SEND HTML FILE FOR WAITING LIST
   app.get(YOUR-URL-WAITING-LIST-HTML, function () {
-    
+    res.sendFile(path.join(__dirname, "../public/reserve.html"))
   } );
 
   // If no matching route is found default to home
