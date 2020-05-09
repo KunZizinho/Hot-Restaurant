@@ -7,6 +7,7 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
 
 </head>
 <body>
@@ -20,8 +21,8 @@
       <br>
 
       <div class="text-center">
-        <a href="./tables.html"><button class="btn btn-lg btn-primary" id="viewTables"><span class="fa fa-list-alt"></span> View Tables</button></a>
-        <a href="./reserve.html"><button class="btn btn-lg btn-danger" id="reservations"><span class="fa fa-credit-card"></span> Make Reservation</button></a>
+        <a href="/tables"><button class="btn btn-lg btn-primary" id="viewTables"><span class="fa fa-list-alt"></span> View Tables</button></a>
+        <a href="/reserve"><button class="btn btn-lg btn-danger" id="reservations"><span class="fa fa-credit-card"></span> Make Reservation</button></a>
       </div>
 
     </div>
@@ -34,18 +35,18 @@
 
   </div>
 
-  <!-- <script>
+  <script>
     $("#viewTables").on("click", function(){
       var showTables = $("#tableList").vol().trim();
       console.log(showTables)
     });
 
     $("#reservations").on("click", function(){
-      var showTables = $("#waitList").vol().trim();
-      console.log(showTables)
+      var showWaitList = $("#waitList").vol().trim();
+      console.log(showWaitList)
     });
 
-  </script> -->
+  </script>
 
 </body>
 </html>

@@ -2,7 +2,7 @@
 // DEPENDENCIES
 // Series of npm packages that we will use to give our server useful functionality
 // ==============================================================================
-const express = require("express");
+var express = require("express");
 // let tableData = require("./data/tableData");
 // let waitingList = require("./data/waitinglistData")
 
@@ -15,7 +15,7 @@ const express = require("express");
 var app = express();
 
 // Sets an initial port. We"ll use this later in our listener
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 
 // Sets up the Express app to handle data parsing
 // YOUR CODE HERE
@@ -32,8 +32,8 @@ app.use(express.json());
 // app.get("/", (req, res) => {
 //   res.send('<h1>Hello World</h1>');
 // });
-require("./routes/apiRoutes");
-require("./routes/htmlRoutes");
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 // app.get("/api/tables", (req, res) => {
 //   res.json(tableData);
 // });

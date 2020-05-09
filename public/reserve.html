@@ -94,13 +94,13 @@
     // Here we grab the form elements
     var newReservation = {
       // YOUR CODE HERE - TO ADD PROPERTIES FROM FORM ELEMENTS
-      costumerName: $("#reserve-name").vol().trim(),
-      costumerNumber: $("#reserve-phone").vol().trim(),
-      costumerEmail: $("#reserve-email").vol().trim(),
-      costumerID: $("#reserve-unique-id").vol().trim()
+      customerName: $("#reserve-name").val().trim(),
+      customerNumber: $("#reserve-phone").val().trim(),
+      customerEmail: $("#reserve-email").val().trim(),
+      customerID: $("#reserve-unique-id").val().trim()
     };
 
-    console.log(newReservation);
+     console.log(newReservation);
 
     // This line is the magic. It"s very similar to the standard ajax function we used.
     // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".

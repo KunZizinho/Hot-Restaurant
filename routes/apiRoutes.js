@@ -47,7 +47,7 @@ module.exports = function(app) {
     // 
     // YOUR CODE HERE
     if(tableData.length < 5){
-      tableDatapush(req.body);
+      tableData.push(req.body);
       res.json(true);
 
     }else {
