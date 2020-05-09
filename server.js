@@ -21,7 +21,6 @@ var PORT = process.env.PORT || 8080;
 // YOUR CODE HERE
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
-app.use(express.static("./public"));
 
 
 // ================================================================================
@@ -33,10 +32,8 @@ app.use(express.static("./public"));
 // app.get("/", (req, res) => {
 //   res.send('<h1>Hello World</h1>');
 // });
-const apiRoutes = require("./routes/apiRoutes");
-const htmlRoutes = require("./routes/htmlRoutes");
-console.log(apiRoutes)
-console.log(htmlRoutes)
+require("./routes/apiRoutes");
+require("./routes/htmlRoutes");
 // app.get("/api/tables", (req, res) => {
 //   res.json(tableData);
 // });

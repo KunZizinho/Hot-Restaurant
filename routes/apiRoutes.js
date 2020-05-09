@@ -19,16 +19,18 @@ module.exports = function(app) {
   // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
   // ---------------------------------------------------------------------------
   // YOUR CODE HERE TO REPLACE THE PLACEHOLDERS
-
+  app.get("/", (req, res) => {
+    res.send("../public/home.html");
+  })
   // YOUR CODE TO MAP AND SEND TABLE DATA IN JSON
   app.get("/api/tables", (req, res) => {
     res.json(tableData);
   });
 
   // YOUR CODE TO MAP AND SEND WAITING LIST DATA IN JSON
-   app.get("/api/waitlist", (req, res) => {
+  app.get("/api/waitlist", (req, res) => {
      res.json(waitListData);
-   });
+  });
 
   // API POST Requests
   // Below code handles when a user submits a form and thus submits data to the server.

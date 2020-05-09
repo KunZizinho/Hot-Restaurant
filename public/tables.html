@@ -24,7 +24,7 @@
       <br>
 
       <div class="text-center">
-        <a href="/reserve"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span> Make Reservation</button></a>
+        <a href="/reserve"><button class="btn btn-lg btn-danger" id="makeRes"><span class="fa fa-credit-card"></span> Make Reservation</button></a>
         <a href="/"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a>
       </div>
     </div>
@@ -71,13 +71,16 @@
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS LOADED FROM OUR SERVER -->
 <script type="text/javascript">
 
+  $("#makeRes").on("click", event => {
+    var showResForm = $("#resForm").vol().trim();
+  });
   // In this code, jQuery is used to "download" the data from our server
   // We then dynamically display this content in our table. This is very similar to the group projects you just completed.
   // It's also very similar to the NYT search application. In fact, I copied a ton of code from there.
 
   function runTableQuery() {
     // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-    $.ajax({ url: YOUR-URL-TABLE-DATA, method: "GET" })
+    $.ajax({ url: "./api/tables", method: "GET" })
       .then(function(tableData) {
 
         // Here we then log the tableData to console, where it will show up as an object.
@@ -111,7 +114,7 @@
   function runWaitListQuery() {
 
     // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-    $.ajax({ url: YOUR-URL-WAITING-LIST-DATA, method: "GET" })
+    $.ajax({ url: "./api.waitlist", method: "GET" })
       .then(function(waitData) {
 
         // Here we then log the waitlistData to console, where it will show up as an object.
@@ -131,10 +134,10 @@
             // YOUR CODE HERE - TO ADD THE PROPERTIES TO THE LIST ITEMS
             $("<h2>").text("Table #" + (i + 1)),
             $("<hr>"),
-            $("<h2>").text("ID: " + tableData[i].customerID),
-            $("<h2>").text("Name: " + tableData[i].customerName),
-            $("<h2>").text("Email: " + tableData[i].customerEmail),
-            $("<h2>").text("Phone: " + tableData[i].phoneNumber)
+            $("<h2>").text("ID: " + waitData[i].customerID),
+            $("<h2>").text("Name: " + waitData[i].customerName),
+            $("<h2>").text("Email: " + waitData[i].customerEmail),
+            $("<h2>").text("Phone: " + waitData[i].phoneNumber)
           );
 
           waitList.append(listItem);
