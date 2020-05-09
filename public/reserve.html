@@ -97,10 +97,10 @@
     // Here we grab the form elements
     var newReservation = {
       // YOUR CODE HERE - TO ADD PROPERTIES FROM FORM ELEMENTS
-      name: $("#reserve-name").vol().trim(),
-      number: $("#reserve-phone").vol().trim(),
-      email: $("#reserve-email").vol().trim(),
-      id: $("#reserve-unique-id").vol().trim()
+      costumerName: $("#reserve-name").vol().trim(),
+      costumerNumber: $("#reserve-phone").vol().trim(),
+      costumerEmail: $("#reserve-email").vol().trim(),
+      costumerID: $("#reserve-unique-id").vol().trim()
     };
 
     console.log(newReservation);
@@ -112,15 +112,22 @@
 
     // YOUR CODE TO MAP THE URL FROM BROWSER AND SEND DATA TO WEB SERVER AND 
     // ALERT THE USER ACCORDING TO THE STATUS RECEIVED FROM WEB SERVER
-    $.post(YOUR-URL-POST-DATA, YOUR-POST-DATA,
+    $.post("/api/tables", newReservation,
       function(data) {
 
         // Check the status and alert the user
         // YOUR CODE HERE
-        
+        if(data){
+          alert("Your table reservation is booked successfully!");
+        }else {
+          alert("All tables are booked, We put you on waiting list for the next available table.");
+        }
         // Clear the form when submitting
         // YOUR CODE HERE
-
+        $("#reserve-name").val("");
+        $("#reserve-phone").val("");
+        $("#reserve-email").val("");
+        $("#reserve-unique-id").val("");
       });
 
   });

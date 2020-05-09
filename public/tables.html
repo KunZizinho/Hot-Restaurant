@@ -95,7 +95,12 @@
 
           listItem.append(
             // YOUR CODE HERE - TO APPEND PROPERTIES TO THE LIST ITEM
-
+            $("<h2>").text("Table #" + (i + 1)),
+            $("<hr>"),
+            $("<h2>").text("ID: " + tableData[i].customerID),
+            $("<h2>").text("Name: " + tableData[i].customerName),
+            $("<h2>").text("Email: " + tableData[i].customerEmail),
+            $("<h2>").text("Phone: " + tableData[i].phoneNumber)
           );
 
           tableList.append(listItem);
@@ -124,7 +129,12 @@
 
           listItem.append(
             // YOUR CODE HERE - TO ADD THE PROPERTIES TO THE LIST ITEMS
-
+            $("<h2>").text("Table #" + (i + 1)),
+            $("<hr>"),
+            $("<h2>").text("ID: " + tableData[i].customerID),
+            $("<h2>").text("Name: " + tableData[i].customerName),
+            $("<h2>").text("Email: " + tableData[i].customerEmail),
+            $("<h2>").text("Phone: " + tableData[i].phoneNumber)
           );
 
           waitList.append(listItem);

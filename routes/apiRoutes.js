@@ -19,13 +19,16 @@ module.exports = function(app) {
   // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
   // ---------------------------------------------------------------------------
   // YOUR CODE HERE TO REPLACE THE PLACEHOLDERS
-$()
 
   // YOUR CODE TO MAP AND SEND TABLE DATA IN JSON
-
+  app.get("/api/tables", (req, res) => {
+    res.json(tableData);
+  });
 
   // YOUR CODE TO MAP AND SEND WAITING LIST DATA IN JSON
- 
+   app.get("/api/waitlist", (req, res) => {
+     res.json(waitListData);
+   });
 
   // API POST Requests
   // Below code handles when a user submits a form and thus submits data to the server.
@@ -35,20 +38,19 @@ $()
   // Then the server saves the data to the tableData array)
   // ---------------------------------------------------------------------------
 
-  app.post(YOUR-URL-POST-DATA, function(req, res) {
+  app.post("/api/tables", function(req, res) {
     // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body parsing middleware
     // 
     // YOUR CODE HERE
-    switch (req) {
-      case "":
-        return 
-        
-        break;
-    
-      default:
-        break;
+    if(tableData.length < 5){
+      tableDatapush(req.body);
+      res.json(true);
+
+    }else {
+      waitListData.push(req.body);
+      res.json(false);
     }
 
   });
